@@ -1,0 +1,41 @@
+/* GLOBAL */
+body {
+	background-image: url("../img/lazybackground.png");
+	background-repeat: repeat;
+}
+
+.main-content {
+	background-color: #f0f8ff;
+	height: 100%;
+}
+
+#main-nav {
+	border-bottom: 1px solid gray;
+	padding: 10px 0;
+}
+
+#header-container {
+	text-align: center;
+}
+
+.col-md-2, .col-md-3 {
+	border: 1px solid gray;
+}
+
+
+/* CHAMPION COMPARISON */
+#champ-compare-content {
+	margin: 20px 0;
+}
+
+.stat-column {
+	font-size: 90%;
+}
+
+.stat-column span {
+	float: right;
+}
+
+.champ-img-column img {
+	width: 100%;
+}
