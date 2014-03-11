@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/myScript.js"></script>
 	</head>
 	<body>
 		<div class="main-content container">
@@ -23,81 +24,110 @@
 
 			<div id="champ-compare-content" class="row">
 				<div class="stat-column col-md-2">
-					<div>Health: <span>10</span></div>
-					<div>Mana: <span>10</span></div>
-					<div>Attack Damage: <span>10</span></div>
-					<div>Ability Power: <span>10</span></div>
-					<div>Attack Speed: <span>10</span></div>
-					<div>Movement Speed: <span>10</span></div>
-					<div>Armor: <span>10</span></div>
-					<div>Magic Resist: <span>10</span></div>
-					<div>Health Regeneration: <span>10</span></div>
-					<div>Mana Regeneration: <span>10</span></div>
-					<div>Tenacity: <span>10</span></div>
-					<div>Crit Chance: <span>10</span></div>
-					<div>Crit Damage: <span>10</span></div>
-					<div>Life Steal: <span>10</span></div>
-					<div>Spell Vamp: <span>10</span></div>
-					<div>Armor Penetration: <span>10</span></div>
-					<div>Magic Penetration: <span>10</span></div>
-					<div>Cooldown Reduction: <span>10</span></div>
-					<div>Gold/10s: <span>10</span></div>
+					<div>Health: <span id="stat-champ1-health">0</span></div>
+					<div>Mana: <span id="stat-champ1-mana">0</span></div>
+					<div>Attack Damage: <span id="stat-champ1-ad">0</span></div>
+					<div>Ability Power: <span id="stat-champ1-ap">0</span></div>
+					<div>Attack Speed: <span id="stat-champ1-as">0</span></div>
+					<div>Movement Speed: <span id="stat-champ1-ms">0</span></div>
+					<div>Armor: <span id="stat-champ1-armor">0</span></div>
+					<div>Magic Resist: <span id="stat-champ1-mr">0</span></div>
+					<div>Health Regeneration: <span id="stat-champ1-hr">0</span></div>
+					<div>Mana Regeneration: <span id="stat-champ1-manar">0</span></div>
+					<div>Tenacity: <span id="stat-champ1-tenacity">0</span></div>
+					<div>Crit Chance: <span id="stat-champ1-critc">0</span></div>
+					<div>Crit Damage: <span id="stat-champ1-critd">0</span></div>
+					<div>Life Steal: <span id="stat-champ1-ls">0</span></div>
+					<div>Spell Vamp: <span id="stat-champ1-sv">0</span></div>
+					<div>Armor Penetration: <span id="stat-champ1-apen">0</span></div>
+					<div>Magic Penetration: <span id="stat-champ1-mpen">0</span></div>
+					<div>Cooldown Reduction: <span id="stat-champ1-cool">0</span></div>
+					<div>Gold/10s: <span id="stat-champ1-gold">0</span></div>
+					<div>Price (IP) <span id="stat-champ1-ip">0</span></div>
+					<div>Price (RP) <span id="stat-champ1-rp">0</span></div>
+					<div>Range <span id="stat-champ1-range">0</span></div>
 				</div>
 
-				<div class="champ-img-column col-md-3"><img src="img/blitzcrank.jpg" alt="champ img"></div>
+				<div id="champ1-img" class="champ-img-column col-md-3"><img src="img/blank.png" alt="champ img"></div>
 
 				<div class="stat-column col-md-2">
-					<div>Health: <span>10</span></div>
-					<div>Mana: <span>10</span></div>
-					<div>Attack Damage: <span>10</span></div>
-					<div>Ability Power: <span>10</span></div>
-					<div>Attack Speed: <span>10</span></div>
-					<div>Movement Speed: <span>10</span></div>
-					<div>Armor: <span>10</span></div>
-					<div>Magic Resist: <span>10</span></div>
-					<div>Health Regeneration: <span>10</span></div>
-					<div>Mana Regeneration: <span>10</span></div>
-					<div>Tenacity: <span>10</span></div>
-					<div>Crit Chance: <span>10</span></div>
-					<div>Crit Damage: <span>10</span></div>
-					<div>Life Steal: <span>10</span></div>
-					<div>Spell Vamp: <span>10</span></div>
-					<div>Armor Penetration: <span>10</span></div>
-					<div>Magic Penetration: <span>10</span></div>
-					<div>Cooldown Reduction: <span>10</span></div>
-					<div>Gold/10s: <span>10</span></div>
+					<div>Health: <span id="stat-champ15-health">0</span></div>
+					<div>Mana: <span id="stat-champ15-mana">0</span></div>
+					<div>Attack Damage: <span id="stat-champ15-ad">0</span></div>
+					<div>Ability Power: <span id="stat-champ15-ap">0</span></div>
+					<div>Attack Speed: <span id="stat-champ15-as">0</span></div>
+					<div>Movement Speed: <span id="stat-champ15-ms">0</span></div>
+					<div>Armor: <span id="stat-champ15-armor">0</span></div>
+					<div>Magic Resist: <span id="stat-champ15-mr">0</span></div>
+					<div>Health Regeneration: <span id="stat-champ15-hr">0</span></div>
+					<div>Mana Regeneration: <span id="stat-champ15-manar">0</span></div>
+					<div>Tenacity: <span id="stat-champ15-tenacity">0</span></div>
+					<div>Crit Chance: <span id="stat-champ15-critc">0</span></div>
+					<div>Crit Damage: <span id="stat-champ15-critd">0</span></div>
+					<div>Life Steal: <span id="stat-champ15-ls">0</span></div>
+					<div>Spell Vamp: <span id="stat-champ15-sv">0</span></div>
+					<div>Armor Penetration: <span id="stat-champ15-apen">0</span></div>
+					<div>Magic Penetration: <span id="stat-champ15-mpen">0</span></div>
+					<div>Cooldown Reduction: <span id="stat-champ15-cool">0</span></div>
+					<div>Gold/10s: <span id="stat-champ15-gold">0</span></div>
+					<div>Price (IP) <span id="stat-champ15-ip">0</span></div>
+					<div>Price (RP) <span id="stat-champ15-rp">0</span></div>
+					<div>Range <span id="stat-champ15-range">0</span></div>
 				</div>
 
-				<div class="champ-img-column col-md-3"><img src="img/fizz.jpg" alt="champ img"></div>
+				<div id="champ2-img" class="champ-img-column col-md-3"><img src="img/blank.png" alt="champ img"></div>
 
 				<div class="stat-column col-md-2">
-					<div>Health: <span>10</span></div>
-					<div>Mana: <span>10</span></div>
-					<div>Attack Damage: <span>10</span></div>
-					<div>Ability Power: <span>10</span></div>
-					<div>Attack Speed: <span>10</span></div>
-					<div>Movement Speed: <span>10</span></div>
-					<div>Armor: <span>10</span></div>
-					<div>Magic Resist: <span>10</span></div>
-					<div>Health Regeneration: <span>10</span></div>
-					<div>Mana Regeneration: <span>10</span></div>
-					<div>Tenacity: <span>10</span></div>
-					<div>Crit Chance: <span>10</span></div>
-					<div>Crit Damage: <span>10</span></div>
-					<div>Life Steal: <span>10</span></div>
-					<div>Spell Vamp: <span>10</span></div>
-					<div>Armor Penetration: <span>10</span></div>
-					<div>Magic Penetration: <span>10</span></div>
-					<div>Cooldown Reduction: <span>10</span></div>
-					<div>Gold/10s: <span>10</span></div>
+					<div>Health: <span id="stat-champ2-health">0</span></div>
+					<div>Mana: <span id="stat-champ2-mana">0</span></div>
+					<div>Attack Damage: <span id="stat-champ2-ad">0</span></div>
+					<div>Ability Power: <span id="stat-champ2-ap">0</span></div>
+					<div>Attack Speed: <span id="stat-champ2-as">0</span></div>
+					<div>Movement Speed: <span id="stat-champ2-ms">0</span></div>
+					<div>Armor: <span id="stat-champ2-armor">0</span></div>
+					<div>Magic Resist: <span id="stat-champ2-mr">0</span></div>
+					<div>Health Regeneration: <span id="stat-champ2-hr">0</span></div>
+					<div>Mana Regeneration: <span id="stat-champ2-manar">0</span></div>
+					<div>Tenacity: <span id="stat-champ2-tenacity">0</span></div>
+					<div>Crit Chance: <span id="stat-champ2-critc">0</span></div>
+					<div>Crit Damage: <span id="stat-champ2-critd">0</span></div>
+					<div>Life Steal: <span id="stat-champ2-ls">0</span></div>
+					<div>Spell Vamp: <span id="stat-champ2-sv">0</span></div>
+					<div>Armor Penetration: <span id="stat-champ2-apen">0</span></div>
+					<div>Magic Penetration: <span id="stat-champ2-mpen">0</span></div>
+					<div>Cooldown Reduction: <span id="stat-champ2-cool">0</span></div>
+					<div>Gold/10s: <span id="stat-champ2-gold">0</span></div>
+					<div>Price (IP) <span id="stat-champ2-ip">0</span></div>
+					<div>Price (RP) <span id="stat-champ2-rp">0</span></div>
+					<div>Range <span id="stat-champ2-range">0</span></div>
 				</div>
 			</div>
 
 			<div id="champ-item-content" class="row">
 				<div class="col-md-2">a</div>
-				<div class="col-md-3">b</div>
+				<div class="col-md-3">
+					<select class="champ-select">
+						<option value=""></option>
+						<option value="Blitzcrank">Blitzcrank</option>
+						<option value="Draven">Draven</option>
+						<option value="Ezreal">Ezreal</option>
+						<option value="Fizz">Fizz</option>
+						<option value="Riven">Riven</option>
+						<option value="Teemo">Teemo</option>
+					</select>
+				</div>
 				<div class="col-md-2">c</div>
-				<div class="col-md-3">d</div>
+				<div class="col-md-3">
+					<select class="champ-select2">
+						<option value=""></option>
+						<option value="Blitzcrank">Blitzcrank</option>
+						<option value="Draven">Draven</option>
+						<option value="Ezreal">Ezreal</option>
+						<option value="Fizz">Fizz</option>
+						<option value="Riven">Riven</option>
+						<option value="Teemo">Teemo</option>
+					</select>
+				</div>
 				<div class="col-md-2">e</div>
 			</div>
 
