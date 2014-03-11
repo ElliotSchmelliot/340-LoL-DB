@@ -20,10 +20,6 @@ body {
 	text-align: center;
 }
 
-.col-md-2, .col-md-3 {
-	border: 1px solid gray;
-}
-
 
 /* CHAMPION COMPARISON */
 #champ-compare-content {

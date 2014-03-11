@@ -1,22 +1,4 @@
 $(function() {
-	var currentChampLeft = blankChamp;
-	var currentChampRight = blankChamp;
-
-	var curentItem1Left = blankItem;
-	var curentItem2Left = blankItem;
-	var curentItem3Left = blankItem;
-	var curentItem4Left = blankItem;
-	var curentItem5Left = blankItem;
-	var curentItem6Left = blankItem;
-
-	var curentItem1Right = blankItem;
-	var curentItem2Right = blankItem;
-	var curentItem3Right = blankItem;
-	var curentItem4Right = blankItem;
-	var curentItem5Right = blankItem;
-	var curentItem6Right = blankItem;
-
-
 	var blankChamp = {
 		ip: 0,
 		rp: 0,
@@ -146,7 +128,7 @@ $(function() {
 		ip: 4800,
 		rp: 880,
 		health: 414,
-		mana: "N/A",
+		mana: 0,
 		ad: 51,
 		ap: 0,
 		as: .625,
@@ -154,7 +136,7 @@ $(function() {
 		armor: 15,
 		mr: 30,
 		hr: 2.5,
-		manar: "N/A",
+		manar: 0,
 		tenacity: 0,
 		critc: 0,
 		critd: 0,
@@ -688,11 +670,22 @@ $(function() {
 
 
 
+	var currentChampLeft = blankChamp;
+	var currentChampRight = blankChamp;
 
+	var currentItem1Left = blankItem;
+	var currentItem2Left = blankItem;
+	var currentItem3Left = blankItem;
+	var currentItem4Left = blankItem;
+	var currentItem5Left = blankItem;
+	var currentItem6Left = blankItem;
 
-
-
-
+	var currentItem1Right = blankItem;
+	var currentItem2Right = blankItem;
+	var currentItem3Right = blankItem;
+	var currentItem4Right = blankItem;
+	var currentItem5Right = blankItem;
+	var currentItem6Right = blankItem;
 
 
 
@@ -810,19 +803,46 @@ $(function() {
 
 
 	$(".item-select").change(function() {
+		var id = $(this).attr("id");
 		var val = this.value;
-		if (val == "Abyssal Scepter") {
-			var old = parseInt($("#stat-champ1-ip").html());
-			$("#stat-champ1-ip").html(old + abyssal.ip);
-		} else {
-			// $("#stat-champ1-ip").html()
+		var totals;
+		if (id == "item-left-1") {
+			currentItem1Left = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsLeft(currentChampLeft, currentItem1Left, currentItem2Left, currentItem3Left, currentItem4Left, currentItem5Left, currentItem6Left);
+		} else if (id == "item-left-2") {
+			currentItem2Left = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsLeft(currentChampLeft, currentItem1Left, currentItem2Left, currentItem3Left, currentItem4Left, currentItem5Left, currentItem6Left);
+		} else if (id == "item-left-3") {
+			currentItem3Left = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsLeft(currentChampLeft, currentItem1Left, currentItem2Left, currentItem3Left, currentItem4Left, currentItem5Left, currentItem6Left);
+		} else if (id == "item-left-4") {
+			currentItem4Left = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsLeft(currentChampLeft, currentItem1Left, currentItem2Left, currentItem3Left, currentItem4Left, currentItem5Left, currentItem6Left);
+		} else if (id == "item-left-5") {
+			currentItem5Left = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsLeft(currentChampLeft, currentItem1Left, currentItem2Left, currentItem3Left, currentItem4Left, currentItem5Left, currentItem6Left);
+		} else if (id == "item-left-6") {
+			currentItem6Left = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsLeft(currentChampLeft, currentItem1Left, currentItem2Left, currentItem3Left, currentItem4Left, currentItem5Left, currentItem6Left);
+		} else if (id == "item-right-1") {
+			currentItem1Right = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsRight(currentChampRight, currentItem1Right, currentItem2Right, currentItem3Right, currentItem4Right, currentItem5Right, currentItem6Right);
+		} else if (id == "item-right-2") {
+			currentItem2Right = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsRight(currentChampRight, currentItem1Right, currentItem2Right, currentItem3Right, currentItem4Right, currentItem5Right, currentItem6Right);
+		} else if (id == "item-right-3") {
+			currentItem3Right = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsRight(currentChampRight, currentItem1Right, currentItem2Right, currentItem3Right, currentItem4Right, currentItem5Right, currentItem6Right);
+		} else if (id == "item-right-4") {
+			currentItem4Right = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsRight(currentChampRight, currentItem1Right, currentItem2Right, currentItem3Right, currentItem4Right, currentItem5Right, currentItem6Right);
+		} else if (id == "item-right-5") {
+			currentItem5Right = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsRight(currentChampRight, currentItem1Right, currentItem2Right, currentItem3Right, currentItem4Right, currentItem5Right, currentItem6Right);
+		} else if (id == "item-right-6") {
+			currentItem6Right = getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+			totals = sumItemsRight(currentChampRight, currentItem1Right, currentItem2Right, currentItem3Right, currentItem4Right, currentItem5Right, currentItem6Right);
 		}
-		updateChampDiff();
-	});
-
-	$(".item-right").change(function() {
-		var val = this.value;
-
 		updateChampDiff();
 	});
 });
@@ -1049,8 +1069,6 @@ function updateChampDiff() {
 		$("#stat-champ15-range").css("color", "black");
 	}
 
-
-	
 	var num = parseFloat($("#stat-champ1-as").html()) - parseFloat($("#stat-champ2-as").html());
 	$("#stat-champ15-as").html(num.toFixed(3));
 	if (num > 0) {
@@ -1060,4 +1078,102 @@ function updateChampDiff() {
 	} else {
 		$("#stat-champ15-as").css("color", "black");
 	}
+}
+        // getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas);
+
+function getItemValues(val, blankItem, abyssal, berserkers, bts, btus, chainvest, deathfire, blade, ga, ie, lw, lb, pd, cap, ruby, sight, sorcs, cowl, zhonyas) {
+	var temp;
+	if (val == "Abyssal Scepter") {
+		temp = abyssal;
+	} else if (val == "Berserkers Greaves") {
+		temp = berserkers;
+	} else if (val == "Bloodthirster(stacked)") {
+		temp = bts;
+	} else if (val == "Bloodthirster(unstacked)") {
+		temp = btus;
+	} else if (val == "Chain Vest") {
+		temp = chainvest;
+	} else if (val == "Deathfire Grasp") {
+		temp = deathfire;
+	} else if (val == "Dorans Blade") {
+		temp = blade;
+	} else if (val == "Guardian Angel") {
+		temp = ga;
+	} else if (val == "Infinity Edge") {
+		temp = ie;
+	} else if (val == "Last Whisper") {
+		temp = lw;
+	} else if (val == "Lich Bane") {
+		temp = lb;
+	} else if (val == "Phantom Dancer") {
+		temp = pd;
+	} else if (val == "Rabadons Deathcap") {
+		temp = cap;
+	} else if (val == "Ruby Crystal") {
+		temp = ruby;
+	} else if (val == "Sightstone") {
+		temp = sight;
+	} else if (val == "Sorcerers Shoes") {
+		temp = sorcs;
+	} else if (val == "Spectres Cowl") {
+		temp = cowl;
+	} else if (val == "Zhonyas Hourglass") {
+		temp = zhonyas;
+	} else {
+		temp = blankItem;
+	}
+	return temp;
+}
+
+function sumItemsLeft(currentChamp, item1, item2, item3, item4, item5, item6) {
+	// alert(item2);
+	$("#stat-champ1-ip").html(parseInt(currentChamp.ip + item1.ip + item2.ip + item3.ip + item4.ip + item5.ip + item6.ip));
+	$("#stat-champ1-rp").html(parseInt(currentChamp.rp + item1.rp + item2.rp + item3.rp + item4.rp + item5.rp + item6.rp));
+	$("#stat-champ1-health").html(parseInt(currentChamp.health + item1.health + item2.health + item3.health + item4.health + item5.health + item6.health));
+	$("#stat-champ1-mana").html(parseInt(currentChamp.mana + item1.mana + item2.mana + item3.mana + item4.mana + item5.mana + item6.mana));
+	$("#stat-champ1-ad").html(parseInt(currentChamp.ad + item1.ad + item2.ad + item3.ad + item4.ad + item5.ad + item6.ad));
+	$("#stat-champ1-ap").html(parseInt(currentChamp.ap + item1.ap + item2.ap + item3.ap + item4.ap + item5.ap + item6.ap));
+	$("#stat-champ1-as").html(parseFloat(currentChamp.as + item1.as + item2.as + item3.as + item4.as + item5.as + item6.as));
+	$("#stat-champ1-ms").html(parseInt(currentChamp.ms + item1.ms + item2.ms + item3.ms + item4.ms + item5.ms + item6.ms));
+	$("#stat-champ1-armor").html(parseInt(currentChamp.armor + item1.armor + item2.armor + item3.armor + item4.armor + item5.armor + item6.armor));
+	$("#stat-champ1-mr").html(parseInt(currentChamp.mr + item1.mr + item2.mr + item3.mr + item4.mr + item5.mr + item6.mr));
+	$("#stat-champ1-hr").html(parseInt(currentChamp.hr + item1.hr + item2.hr + item3.hr + item4.hr + item5.hr + item6.hr));
+	$("#stat-champ1-manar").html(parseInt(currentChamp.manar + item1.manar + item2.manar + item3.manar + item4.manar + item5.manar + item6.manar));
+	$("#stat-champ1-tenacity").html(parseInt(currentChamp.tenacity + item1.tenacity + item2.tenacity + item3.tenacity + item4.tenacity + item5.tenacity + item6.tenacity));
+	$("#stat-champ1-critc").html(parseInt(currentChamp.critc + item1.critc + item2.critc + item3.critc + item4.critc + item5.critc + item6.critc));
+	$("#stat-champ1-critd").html(parseInt(currentChamp.critd + item1.critd + item2.critd + item3.critd + item4.critd + item5.critd + item6.critd));
+	$("#stat-champ1-ls").html(parseInt(currentChamp.ls + item1.ls + item2.ls + item3.ls + item4.ls + item5.ls + item6.ls));
+	$("#stat-champ1-sv").html(parseInt(currentChamp.sv + item1.sv + item2.sv + item3.sv + item4.sv + item5.sv + item6.sv));
+	$("#stat-champ1-apen").html(parseInt(currentChamp.apen + item1.apen + item2.apen + item3.apen + item4.apen + item5.apen + item6.apen));
+	$("#stat-champ1-mpen").html(parseInt(currentChamp.mpen + item1.mpen + item2.mpen + item3.mpen + item4.mpen + item5.mpen + item6.mpen));
+	$("#stat-champ1-cool").html(parseInt(currentChamp.cool + item1.cool + item2.cool + item3.cool + item4.cool + item5.cool + item6.cool));
+	$("#stat-champ1-gold").html(parseInt(currentChamp.gold + item1.gold + item2.gold + item3.gold + item4.gold + item5.gold + item6.gold));
+	$("#stat-champ1-range").html(parseInt(currentChamp.range + item1.range + item2.range + item3.range + item4.range + item5.range + item6.range));
+	$("#cost-left").html("Cost: " + parseInt(item1.cost + item2.cost + item3.cost + item4.cost + item5.cost + item6.cost));
+}
+
+function sumItemsRight(currentChamp, item1, item2, item3, item4, item5, item6) {
+	$("#stat-champ2-ip").html(parseInt(currentChamp.ip + item1.ip + item2.ip + item3.ip + item4.ip + item5.ip + item6.ip));
+	$("#stat-champ2-rp").html(parseInt(currentChamp.rp + item1.rp + item2.rp + item3.rp + item4.rp + item5.rp + item6.rp));
+	$("#stat-champ2-health").html(parseInt(currentChamp.health + item1.health + item2.health + item3.health + item4.health + item5.health + item6.health));
+	$("#stat-champ2-mana").html(parseInt(currentChamp.mana + item1.mana + item2.mana + item3.mana + item4.mana + item5.mana + item6.mana));
+	$("#stat-champ2-ad").html(parseInt(currentChamp.ad + item1.ad + item2.ad + item3.ad + item4.ad + item5.ad + item6.ad));
+	$("#stat-champ2-ap").html(parseInt(currentChamp.ap + item1.ap + item2.ap + item3.ap + item4.ap + item5.ap + item6.ap));
+	$("#stat-champ2-as").html(parseFloat(currentChamp.as + item1.as + item2.as + item3.as + item4.as + item5.as + item6.as));
+	$("#stat-champ2-ms").html(parseInt(currentChamp.ms + item1.ms + item2.ms + item3.ms + item4.ms + item5.ms + item6.ms));
+	$("#stat-champ2-armor").html(parseInt(currentChamp.armor + item1.armor + item2.armor + item3.armor + item4.armor + item5.armor + item6.armor));
+	$("#stat-champ2-mr").html(parseInt(currentChamp.mr + item1.mr + item2.mr + item3.mr + item4.mr + item5.mr + item6.mr));
+	$("#stat-champ2-hr").html(parseInt(currentChamp.hr + item1.hr + item2.hr + item3.hr + item4.hr + item5.hr + item6.hr));
+	$("#stat-champ2-manar").html(parseInt(currentChamp.manar + item1.manar + item2.manar + item3.manar + item4.manar + item5.manar + item6.manar));
+	$("#stat-champ2-tenacity").html(parseInt(currentChamp.tenacity + item1.tenacity + item2.tenacity + item3.tenacity + item4.tenacity + item5.tenacity + item6.tenacity));
+	$("#stat-champ2-critc").html(parseInt(currentChamp.critc + item1.critc + item2.critc + item3.critc + item4.critc + item5.critc + item6.critc));
+	$("#stat-champ2-critd").html(parseInt(currentChamp.critd + item1.critd + item2.critd + item3.critd + item4.critd + item5.critd + item6.critd));
+	$("#stat-champ2-ls").html(parseInt(currentChamp.ls + item1.ls + item2.ls + item3.ls + item4.ls + item5.ls + item6.ls));
+	$("#stat-champ2-sv").html(parseInt(currentChamp.sv + item1.sv + item2.sv + item3.sv + item4.sv + item5.sv + item6.sv));
+	$("#stat-champ2-apen").html(parseInt(currentChamp.apen + item1.apen + item2.apen + item3.apen + item4.apen + item5.apen + item6.apen));
+	$("#stat-champ2-mpen").html(parseInt(currentChamp.mpen + item1.mpen + item2.mpen + item3.mpen + item4.mpen + item5.mpen + item6.mpen));
+	$("#stat-champ2-cool").html(parseInt(currentChamp.cool + item1.cool + item2.cool + item3.cool + item4.cool + item5.cool + item6.cool));
+	$("#stat-champ2-gold").html(parseInt(currentChamp.gold + item1.gold + item2.gold + item3.gold + item4.gold + item5.gold + item6.gold));
+	$("#stat-champ2-range").html(parseInt(currentChamp.range + item1.range + item2.range + item3.range + item4.range + item5.range + item6.range));
+	$("#cost-right").html("Cost: " + parseInt(item1.cost + item2.cost + item3.cost + item4.cost + item5.cost + item6.cost));
 }
