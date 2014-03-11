@@ -22,6 +22,12 @@ body {
 
 
 /* CHAMPION COMPARISON */
+.column-title {
+	font-size: 150%;
+	font-weight: bold;
+	text-align: center;
+}
+
 #champ-compare-content {
 	margin: 20px 0;
 }
