@@ -10,8 +10,10 @@ body {
 }
 
 #main-nav {
+	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
-	padding: 10px 0;
+	padding: 5px;
+	margin: 10px 0;
 }
 
 #header-container {
@@ -38,4 +40,13 @@ body {
 
 .champ-img-column img {
 	width: 100%;
+}
+
+.champ-selector {
+	text-align: center;
+}
+
+.item-select {
+	margin-bottom: 5px;
+	font-size: 12px;
 }
